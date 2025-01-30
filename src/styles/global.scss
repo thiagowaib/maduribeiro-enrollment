@@ -12,11 +12,12 @@ strong {
 }
 
 main {
+    display: flex;
+    flex-direction: row;
     scroll-behavior: smooth;
     width: 100vw;
     height: 100vh;
-    overflow-x: hidden;
-    position: relative;
+    overflow: hidden;
     background-image: url('../assets/mobile.webp');
     background-position: center;
     background-repeat: no-repeat;
@@ -26,6 +27,14 @@ main {
     }   
 }
 
-.hidden {
+.slide {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.slide.hidden {
     display: none;
 }

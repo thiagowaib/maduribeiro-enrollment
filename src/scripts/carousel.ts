@@ -1,7 +1,6 @@
 
 const moveSlide = (current:HTMLDivElement, target:HTMLDivElement|undefined):any => {
     if(!target) { return; }
-    console.log(`Moving from ${current} to ${target}`);
     current.classList.add('hidden');
     target.classList.remove('hidden');
 }
@@ -20,7 +19,7 @@ for(let index = 0; index < slides.length; index++) {
         btnForward.onclick = null;
         break;
     }
-    
+
     switch (index) {
         case 0:
             btnBack?.setAttribute("disabled", "true");
