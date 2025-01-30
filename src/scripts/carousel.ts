@@ -15,8 +15,8 @@ for(let index = 0; index < slides.length; index++) {
     if(slides.length == 1) {
         btnForward?.setAttribute("disabled", "true");
         btnBack?.setAttribute("disabled", "true");
-        btnBack.onclick    = null;
-        btnForward.onclick = null;
+        btnBack?.addEventListener("click", ()=>{});
+        btnForward?.addEventListener("click", ()=>{});
         break;
     }
 
@@ -24,20 +24,20 @@ for(let index = 0; index < slides.length; index++) {
         case 0:
             btnBack?.setAttribute("disabled", "true");
             btnForward?.removeAttribute("disabled");
-            btnBack.onclick    = null;
-            btnForward.onclick = () => moveSlide(slide, slides[index+1]);
+            btnBack?.addEventListener("click", ()=>{});
+            btnForward?.addEventListener("click", () => moveSlide(slide, slides[index+1]));
             break;
         case (slides.length - 1):
             btnBack?.removeAttribute("disabled");
             btnForward?.setAttribute("disabled", "true");
-            btnBack.onclick    = () => moveSlide(slide, slides[index-1]);
-            btnForward.onclick = null;
+            btnBack?.addEventListener("click", () => moveSlide(slide, slides[index-1]));
+            btnForward?.addEventListener("click", () => {});
             break;
         default:
             btnBack?.removeAttribute("disabled");
             btnForward?.removeAttribute("disabled");
-            btnBack.onclick    = () => moveSlide(slide, slides[index-1]);
-            btnForward.onclick = () => moveSlide(slide, slides[index+1]);
+            btnBack?.addEventListener("click", () => moveSlide(slide, slides[index-1]));
+            btnForward?.addEventListener("click", () => moveSlide(slide, slides[index+1]));
             break;
     }
 }

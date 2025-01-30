@@ -22,6 +22,7 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    color: $bw-600;
     @media screen and (min-width: $breakpoint){
         background-image: url('../assets/desktop.webp');
     }   
@@ -32,9 +33,40 @@ main {
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-
 }
 
 .slide.hidden {
     display: none;
+}
+
+#slide-0 {
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 30% 5%;
+    font-style: italic;
+    div.title {
+        h1 {
+            font-size: 1.6rem;
+        }
+        h2 {
+            font-size: 1.6rem;
+        }
+    }
+    div {
+        p{
+            margin: 12px 0;
+            font-size: .9rem;
+            color: $bw-500;
+            line-height: 1rem;
+        }
+    }
+    #btn-forward-0 {
+        background-color: $bw-600;
+        color: $bw-100;
+        font-style: italic;
+        font-size: 1.25rem;
+        padding: 6px 12px;
+        border-radius: 3px;
+        align-self: flex-start;
+    }
 }
