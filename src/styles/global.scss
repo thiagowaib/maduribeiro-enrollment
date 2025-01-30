@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+// Font Definition
+* { 
+    font-family: "Montserrat", sans-serif;
+}
+*.garamond {
+    font-family: "EB Garamond", serif; font-style: italic;
+}
+strong {
+    font-weight: bold;
+}
