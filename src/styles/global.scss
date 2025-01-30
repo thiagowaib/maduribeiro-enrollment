@@ -10,3 +10,22 @@
 strong {
     font-weight: bold;
 }
+
+main {
+    scroll-behavior: smooth;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    background-image: url('../assets/mobile.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media screen and (min-width: $breakpoint){
+        background-image: url('../assets/desktop.webp');
+    }   
+}
+
+.hidden {
+    display: none;
+}
