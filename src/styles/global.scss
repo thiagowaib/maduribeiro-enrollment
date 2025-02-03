@@ -43,16 +43,16 @@ main {
 
     &#slide-0 {
         align-items: center;
-        justify-content: space-evenly;
-        padding: 30% 5%;
+        justify-content: center;
+        padding: 0 5%;
         font-style: italic;
+        max-width: 728px;
+        margin: 0 auto;
         div.title {
-            h1 {
-                font-size: 1.6rem;
-            }
-            h2 {
-                font-size: 1.6rem;
-            }
+            font-size: 1.6rem;
+            @media screen and (min-width: $breakpoint){
+                font-size: 2.75rem;
+            }   
         }
         div {
             p{
@@ -60,6 +60,10 @@ main {
                 font-size: .9rem;
                 color: $bw-500;
                 line-height: 1rem;
+                @media screen and (min-width: $breakpoint){
+                    font-size: 1.25rem;
+                    line-height: 1.6rem;
+                }   
             }
         }
     }
@@ -69,22 +73,26 @@ main {
         justify-content: center;
         padding: 0 10%;
         font-style: italic;
+
+        max-width: 770px;
+        margin: 0 auto;
+
         div.title {
-        max-width: 360px;
-        h1 {
-                font-size: 1.6rem;
-            }
-            h2 {
-                font-size: 1.6rem;
-            }
+            font-size: 1.6rem;
+            @media screen and (min-width: $breakpoint){
+                font-size: 2.75rem;
+            }  
         }
         div {
-        max-width: 360px;
-        p{
+            p{
                 margin: 12px 0;
                 font-size: .9rem;
                 color: $bw-500;
                 line-height: 1rem;
+                @media screen and (min-width: $breakpoint){
+                    font-size: 1.25rem;
+                    line-height: 1.6rem;
+                }   
             }
         }
     }
@@ -97,6 +105,9 @@ main {
         .label {
             line-height: 1.5rem;
             margin-bottom: 24px;
+            @media screen and (min-width: $breakpoint){
+                font-size: 1.5rem;
+            }   
         }
         .input {
             padding: 4px 8px;
@@ -108,11 +119,18 @@ main {
 
             &::placeholder {
                 font-size: .9rem;
+                @media screen and (min-width: $breakpoint){
+                    font-size: 1rem;
+                }   
             }
 
             &.alert {
                 border-bottom: 2px solid $alert;
             }
+
+            @media screen and (min-width: $breakpoint){
+                font-size: 1.25rem;
+            }   
         }
         .input-alert {
             transition: all .3s;
@@ -129,10 +147,14 @@ main {
             padding: 0 4px;
             border-radius: 0 0 16px 16px;
             font-size: .8rem;
+            max-width: $breakpoint;
             &.alert {
                 background-color: $alert;
                 color: $bw-100;
             }
+            @media screen and (min-width: $breakpoint){
+                font-size: 1rem;
+            }   
         }
     }
     .button-container {
@@ -167,4 +189,7 @@ main {
             transform: scale(1.3);
         }
     }
+    @media screen and (min-width: $breakpoint){
+        font-size: 1.5rem;
+    }   
 }
