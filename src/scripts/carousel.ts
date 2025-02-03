@@ -1,3 +1,4 @@
+import { validateInput } from "./form";
 
 const moveSlide = (current:HTMLDivElement, target:HTMLDivElement|undefined):any => {
     if(!target) { return; }
@@ -37,7 +38,7 @@ for(let index = 0; index < slides.length; index++) {
             btnBack?.removeAttribute("disabled");
             btnForward?.removeAttribute("disabled");
             btnBack?.addEventListener("click", () => moveSlide(slide, slides[index-1]));
-            btnForward?.addEventListener("click", () => moveSlide(slide, slides[index+1]));
+            btnForward?.addEventListener("click", () => validateInput(index, () => moveSlide(slide, slides[index+1])));
             break;
     }
 }
