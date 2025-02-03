@@ -42,6 +42,42 @@ const validatorDefault = (value:String):boolean|String => {
     return true;
 }
 
+const validatorFinal = (value:String):boolean|String => {
+    const result = validatorDefault(value);
+    if(result !== true) { return result; }
+
+    const content = [];
+    const labels = <HTMLCollection> document.getElementsByClassName("label");
+    const inputs = <HTMLCollection> document.getElementsByClassName("input");
+    if(labels.length === inputs.length) {
+        for(let i=0; i<labels.length; i++) {
+            const label = <HTMLLabelElement>labels[i];
+            const input = <HTMLInputElement>inputs[i];
+            content.push({
+                "question": label.innerText.replace("\n", "").trim(),
+                "answer": input.value
+            }) 
+        }
+    }
+
+    try {
+        fetch("https://mapi-kw50.onrender.com/enrollment", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "auth": "9f6a6095bc6158b2b189eb009fe6b44d"
+            },
+            body: JSON.stringify({
+                content
+            })
+        });
+    } catch (error:any) {
+        console.error({Erro: error?.message});
+    }
+
+    return true;
+}
+
 const alertTrigger = (input: HTMLInputElement, alert: HTMLSpanElement, message: string|null):void => {
     clearTimeout(timeoutId);
     if(message === null) {
@@ -77,6 +113,9 @@ export const validateInput = (index:Number, callback:() => void):any => {
         case 4:
             validator = validatorContact;
             break;
+        case 11:
+            validator = validatorFinal;
+            break;
         default:
             validator = validatorDefault;
             break;
@@ -98,5 +137,17 @@ document.getElementById("input-2")?.addEventListener("input", (e:Event) => {
             v = v.replace("@", ""); 
         }
         e.target.value = `@${v}`
+    }
+})
+
+document.getElementById("input-1")?.addEventListener("input", (e:Event) => {
+    if(e?.target instanceof HTMLInputElement) {
+        let v = e.target.value.split(" ");
+        v = v.map(word => {
+            const a = word[0];
+            const b = word.slice(1);
+            return a.toUpperCase() + b;
+        })
+        e.target.value = v.join(" ")
     }
 })
