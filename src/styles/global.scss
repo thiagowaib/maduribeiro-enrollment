@@ -72,19 +72,20 @@ main {
     &#slide-12 {
         align-items: center;
         justify-content: center;
-        padding: 0 10%;
         font-style: italic;
 
-        max-width: 770px;
+        max-width: 928px;
         margin: 0 auto;
 
         div.title {
             font-size: 1.6rem;
+            margin-bottom: 36px;
             @media screen and (min-width: $breakpoint){
                 font-size: 2.75rem;
             }  
         }
         div {
+            margin-bottom: 80px;
             p{
                 margin: 12px 0;
                 font-size: .9rem;
@@ -106,6 +107,7 @@ main {
         .label {
             line-height: 1.5rem;
             margin-bottom: 24px;
+            height: 24px;
             @media screen and (min-width: $breakpoint){
                 font-size: 1.5rem;
             }   
@@ -135,7 +137,7 @@ main {
         }
         .input-alert {
             transition: all .3s;
-            width: 100%;
+            width: fit-content;
             height: 36px;
             display: flex;
             align-items: center;
@@ -145,7 +147,7 @@ main {
             margin-bottom: 24px;
             color: transparent;
             max-width: 75%;
-            padding: 0 4px;
+            padding: 0 12px;
             border-radius: 0 0 16px 16px;
             font-size: .8rem;
             max-width: $breakpoint;
