@@ -13,10 +13,17 @@ const pingServer = async () => {
 
 const clearContent = () => {
     const inputs = <HTMLCollection> document.getElementsByClassName("input");
-
+    const btns   = <HTMLCollection> document.getElementsByClassName("btn-slide-forward");
     for(let i=0; i<inputs.length; i++) {
         const input = <HTMLInputElement> inputs[i];
         input.value = "";
+
+        const btn = <HTMLButtonElement> btns[i];
+        input.addEventListener("keydown", (event:KeyboardEvent) => {
+          if(event.code == "Enter" || event.keyCode === 13) {
+              btn.click();
+          }
+      })
     }
 }
 

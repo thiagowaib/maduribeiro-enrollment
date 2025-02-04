@@ -107,13 +107,14 @@ main {
         .label {
             line-height: 1.5rem;
             margin-bottom: 24px;
-            height: 24px;
+            height: 40px;
             @media screen and (min-width: $breakpoint){
+                height: 24px;
                 font-size: 1.5rem;
             }   
         }
         .input {
-            padding: 4px 8px;
+            padding: 6px 8px;
             font-size: 1.25rem;
             background-color: transparent;
             border-bottom: 2px solid $bw-600;
@@ -161,6 +162,7 @@ main {
         }
     }
     .button-container {
+        margin-bottom: 72px;
         display: flex;
         justify-content: space-between;
         width: 100%;
