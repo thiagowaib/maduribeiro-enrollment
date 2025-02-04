@@ -20,7 +20,7 @@ const clearContent = () => {
 
         const btn = <HTMLButtonElement> btns[i];
         input.addEventListener("keydown", (event:KeyboardEvent) => {
-          if(event.code == "Enter") {
+          if(event.code == "Enter" || event.keyCode === 13) {
               btn.click();
           }
       })
